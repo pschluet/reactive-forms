@@ -7,6 +7,13 @@
         <mat-option *ngFor="let report of reports" [value]="report">{{report.name}}</mat-option>
       </mat-select>
     </mat-form-field>
+    <div class="checkbox-container">
+      <div *ngFor="let fruit of form.controls.fruits['controls']; let i = index" class="checkbox-item">
+        <mat-checkbox [formControl]="fruit" [value]="fruits[i]">
+          {{fruits[i].name}}
+        </mat-checkbox>
+      </div>
+    </div>
   </form>
   <h3>Form Values</h3>
   <pre>{{form.value | json}}</pre>

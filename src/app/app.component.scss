@@ -5,5 +5,24 @@
 pre {
   display: inline-block;
   text-align: left;
-  margin-top: 0;
+  margin-top: 0px;
+  padding: 10px;
+  background-color: rgba(0,0,0,.04);
 }
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .checkbox-item {
+    margin: 0px 8px;
+  }
+}
+
+h3 {
+  margin-top: 20px;
+  margin-bottom: 3px;
+}
+
+

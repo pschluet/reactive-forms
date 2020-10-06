@@ -1,9 +1,18 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 
 interface Report {
   id: number;
   name: string;
+}
+
+enum FruitType {
+  Apple, Banana, Orange
+}
+
+interface Fruit {
+  name: string;
+  type: FruitType;
 }
 
 @Component({
@@ -22,8 +31,17 @@ export class AppComponent {
     { id: 4, name: 'Five' },
   ];
 
+  fruits: Fruit[] = [
+    { name: 'Apple', type: FruitType.Apple },
+    { name: 'Banana', type: FruitType.Banana },
+    { name: 'Orange', type: FruitType.Orange }
+  ];
+
   form = this.fb.group({
-    report: ['']
+    report: [''],
+    fruits: this.fb.array(
+      this.fruits.map(_ => false)
+    )
   });
 
   constructor(private fb: FormBuilder) {
