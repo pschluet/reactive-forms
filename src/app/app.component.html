@@ -1,10 +1,13 @@
-<h4>Basic mat-select</h4>
-<form [formGroup]="form" (ngSubmit)="onSubmit()">
-  <mat-form-field appearance="fill">
-    <mat-label>Report Name</mat-label>
-    <mat-select formControlName="report" [multiple]="true">
-      <mat-option *ngFor="let report of reports" [value]="report">{{report.name}}</mat-option>
-    </mat-select>
-  </mat-form-field>
-  <p>{{form.value | json}}</p>
-</form>
+<div class="container">
+  <h1>Reactive Forms Example</h1>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill">
+      <mat-label>Report Name</mat-label>
+      <mat-select formControlName="report" [multiple]="true">
+        <mat-option *ngFor="let report of reports" [value]="report">{{report.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </form>
+  <h3>Form Values</h3>
+  <pre>{{form.value | json}}</pre>
+</div>
