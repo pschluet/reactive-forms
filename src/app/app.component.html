@@ -2,8 +2,8 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
   <mat-form-field appearance="fill">
     <mat-label>Report Name</mat-label>
-    <mat-select formControlName="report">
-      <mat-option *ngFor="let report of reports" [value]="report.id">{{report.name}}</mat-option>
+    <mat-select formControlName="report" [multiple]="true">
+      <mat-option *ngFor="let report of reports" [value]="report">{{report.name}}</mat-option>
     </mat-select>
   </mat-form-field>
   <p>{{form.value | json}}</p>

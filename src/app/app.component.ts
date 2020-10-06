@@ -29,7 +29,6 @@ export class AppComponent {
   });
 
   constructor(private fb: FormBuilder) {
-    this.form.controls.report.setValue(4);
   }
 
   onSubmit(): void {
